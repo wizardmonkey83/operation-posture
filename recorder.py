@@ -40,6 +40,8 @@ def print_result(result: PoseLandmarkerResult, output_image: mp.Image, timestamp
             writer.writerow(flattened_results)
         else:
             print("No human detected, unable to save landmarks")
+    else:
+        print("KEY IS NOT PRESSED")
 
 
 options = PoseLandmarkerOptions(
@@ -80,5 +82,7 @@ with PoseLandmarker.create_from_options(options) as landmarker:
             
             # sends the image data to perform the landmarking. second arg is the timestamp of the frame
             landmarker.detect_async(mp_image, frame_timestamp_ms)
+
+            # print("Running...")
 
             
