@@ -40,8 +40,6 @@ def print_result(result: PoseLandmarkerResult, output_image: mp.Image, timestamp
             writer.writerow(flattened_results)
         else:
             print("No human detected, unable to save landmarks")
-    else:
-        print("KEY IS NOT PRESSED")
 
 
 options = PoseLandmarkerOptions(
